@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "m-fix-menu": "/components/m-fix-menu/index"
+  }
+}

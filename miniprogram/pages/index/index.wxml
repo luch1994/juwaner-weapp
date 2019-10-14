@@ -1,0 +1,15 @@
+<view class="search-box">
+  <m-search placeholder="搜索" disabled bind:select="onSearch"></m-search>
+</view>
+<swiper class="banner" indicator-dots autoplay circular>
+  <swiper-item wx:for="{{bannerImgs}}" wx:key="{{index}}">
+    <image src="{{item}}" class="banner-img"></image>
+  </swiper-item>
+</swiper>
+<view class="weui-cells weui-cells_after-title">
+  <navigator wx:for="{{categoryList}}" wx:key="{{item._id}}" url="../movie/list?category={{item._id}}&name={{item.text}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__bd">{{item.text}}</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+</view>
+<m-fix-menu></m-fix-menu>

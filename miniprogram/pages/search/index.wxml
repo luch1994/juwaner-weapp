@@ -1,0 +1,17 @@
+<!--pages/search/index.wxml-->
+
+<view class="search-box flex-row">
+  <view class="flex1">
+    <m-search placeholder="搜索" bind:input="onInput" focus></m-search>
+  </view>
+  <view class="cancel" bindtap="back">取消</view>
+</view>
+<view class="weui-cells searchbar-result" hidden="{{searchResult.length == 0}}">
+  <navigator wx:for="{{searchResult}}" wx:key="{{index}}" url="/pages/movie/detail?category={{item.category}}&id={{item.id}}" class="weui-cell" hover-class="weui-cell_active">
+    <view class="weui-cell__bd">
+      <view>{{item.title}}</view>
+    </view>
+  </navigator>
+</view>
+
+<m-fix-menu></m-fix-menu>

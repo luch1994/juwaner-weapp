@@ -1,0 +1,38 @@
+<!--pages/movie/detail.wxml-->
+<view class="weui-article">
+  <text class="weui-article__h1" selectable>{{detail.title}}</text>
+  <view class="weui-article__p weui-flex">
+    <view class="weui-flex__item img-box">
+      <image class="img" mode="widthFix" src="{{detail.imgUrl}}"></image>
+    </view>
+    <rich-text class="weui-flex__item db-info" nodes="{{detail.dbInfo}}"></rich-text>
+  </view>
+  <view class="weui-article__section">
+    <view class="weui-article__h2">简介</view>
+    <view class="weui-article__p" wx:for="{{desc}}" wx:key="{{index}}">
+      {{item}}
+    </view>
+  </view>
+  <view class="weui-article__section" wx:for="{{detail.linkList}}" wx:key="{{index}}" hidden="{{!isShowLink}}">
+    <view class="weui-article__h2">复制下载地址到迅雷，百度网盘等下载</view>
+    <view class="weui-flex">
+      <view class="weui-flex__item">
+        <button class="weui-btn" size="mini" type="primary" data-i="{{index}}" data-type="ed2k" bindtap="clipAll">复制所有ed2k链接</button>
+      </view>
+      <view class="weui-flex__item">
+        <button class="weui-btn" size="mini" type="primary" data-i="{{index}}" data-type="magnet" bindtap="clipAll">复制所有磁力链接</button>
+      </view>
+    </view>
+    <view class="table">
+      <view class="row" wx:for="{{item}}" wx:for-item="row" wx:for-index="j" wx:key="{{j}}">
+        <view class="title">{{row.txt}}</view>
+        <view class="size">{{row.size}}</view>
+        <view class="row-btn" data-i="{{index}}" data-j="{{j}}" data-type="ed2k" bindtap="clipSingle" wx:if="{{row.ed2k}}">ed2k</view>
+        <view class="row-btn" data-i="{{index}}" data-j="{{j}}" data-type="magnet" bindtap="clipSingle" wx:if="{{row.magnet}}">磁力链接</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<m-fix-menu bottom="{{400}}"></m-fix-menu>

@@ -1,0 +1,61 @@
+/* pages/movie/detail.wxss */
+
+.weui-article {
+  font-size: 26rpx;
+}
+
+.img {
+  width: 80%;
+}
+
+.db-info {
+  font-size: 28rpx;
+}
+
+.img-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 16rpx 0;
+  padding: 10rpx 0;
+  border-bottom: 2rpx solid #ededed;
+  font-size: 22rpx;
+}
+
+.title {
+  flex: 1;
+  word-break: break-all;
+  white-space: pre-wrap;
+}
+
+.size {
+  flex-basis: 100rpx;
+  flex-grow: 0;
+  flex-shrink: 0;
+  text-align: center;
+  margin: 0 10rpx;
+}
+
+.row-btn {
+  flex-basis: 120rpx;
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: 60rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 60rpx;
+  background-color: #ededed;
+  margin: 0 16rpx;
+}
+
+.canvas {
+  width: 272px;
+  height: 408px;
+}

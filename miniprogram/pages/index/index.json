@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "m-search": "/components/m-search/index",
+    "m-fix-menu": "/components/m-fix-menu/index"
+  }
+}
